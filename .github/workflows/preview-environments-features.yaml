@@ -27,4 +27,4 @@ jobs:
         tags: webserver-simple:${{ steps.branch-name.outputs.branch }}
 
     - name: Print image name
-      run: echo "Built image: webserver-simple:${{ steps.branch-name.outputs.branch }}"
+      run: echo "webserver-simple:${{ steps.branch-name.outputs.branch }}"
