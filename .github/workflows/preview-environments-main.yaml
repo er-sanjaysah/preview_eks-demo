@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Create repository
         run: |
-          gh repo create er-sanjaysah/preview_eks-demo --private --confirm --push
+          gh repo create er-sanjaysah/preview_eks-demo
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
