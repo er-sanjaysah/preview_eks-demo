@@ -40,4 +40,4 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: myimg/webserver-simple:${{ github.sha }}
+          tags: ssah6694/webserver-simple:${{ github.sha }}
