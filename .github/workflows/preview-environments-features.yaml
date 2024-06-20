@@ -24,7 +24,7 @@ jobs:
         context: .
         file: ./src/Dockerfile
         push: false
-        tags: webserver-simple:${{ steps.branch-name.outputs.branch }}
+        tags: ssah6694/webserver-simple:${{ steps.branch-name.outputs.branch }}
 
     - name: Print image name
       run: echo "webserver-simple:${{ steps.branch-name.outputs.branch }}"
