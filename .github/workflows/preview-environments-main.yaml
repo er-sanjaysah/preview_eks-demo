@@ -6,8 +6,34 @@ on:
       - main
 
 jobs:
+
+  check_repo:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_exists: ${{ steps.check.outputs.exists }}
+    steps:
+      - name: Check if repository exists
+        id: check
+        run: |
+          exists=$(gh repo view er-sanjaysah/preview_eks-demo &>/dev/null && echo 'true' || echo 'false')
+          echo "::set-output name=exists::$exists"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
+  create_repo:
+    runs-on: ubuntu-latest
+    needs: check_repo
+    if: ${{ needs.check_repo.outputs.repo_exists == 'false' }}
+    steps:
+      - name: Create repository
+        run: |
+          gh repo create er-sanjaysah/preview_eks-demo --public --confirm
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+
   clone:
     runs-on: ubuntu-latest
+    needs: [check_repo, create_repo]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
