@@ -27,4 +27,4 @@ jobs:
         tags: ssah6694/webserver-simple:${{ steps.branch-name.outputs.branch }}
 
     - name: Print image name
-      run: echo "webserver-simple:${{ steps.branch-name.outputs.branch }}"
+      run: echo "ssah6694/webserver-simple:${{ steps.branch-name.outputs.branch }}"

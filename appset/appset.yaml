@@ -25,8 +25,10 @@ spec:
         path: helm
         helm:
           parameters:
+          - name: "image.repository"
+            value: 'ssah6694/webserver-simple'
           - name: "image.tag"
-            value: '{{head_sha}}'
+            value: '{{branch}}'
           - name: "namespace"
             value: 'simple-deployment-{{branch}}-{{number}}'
       project: default
@@ -39,5 +41,3 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: 'simple-deployment-{{branch}}-{{number}}'
-      
-      
