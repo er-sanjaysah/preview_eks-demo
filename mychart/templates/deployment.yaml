@@ -15,8 +15,7 @@ spec:
         app: {{ .Values.name }}
     spec:
       containers:
-        #- name: {{ .Values.image.name }}
-        - name: webserver-simple
+        - name: {{ .Values.image.name }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           image: "ssah6694/webserver-simple:{{ default .Chart.Version .Values.image.tag }}"
           ports:

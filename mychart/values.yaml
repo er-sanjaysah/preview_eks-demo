@@ -3,7 +3,7 @@ name: k8s-demo-go-web-app
 env: staging
 namespace: staging
 image:
-  name: ssah6694/webserver-simple
+  name: webserver-simple
   tag: 'd0271d39405ecd01e390f7ded310f0a1c98407e7'
   pullPolicy: IfNotPresent
 service:
