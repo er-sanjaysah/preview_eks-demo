@@ -6,7 +6,7 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "I can do preview environments!\n\n")
+	fmt.Fprintf(w, "I can do previews env environments!\n\n")
 	fmt.Fprintf(w, "Release: v2.0.0")
 }
 
