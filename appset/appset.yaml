@@ -22,7 +22,7 @@ spec:
       source:
         repoURL: https://github.com/er-sanjaysah/preview_eks-demo.git
         targetRevision: '{{head_sha}}'
-        path: helm
+        path: mychart
         helm:
           parameters:
           - name: "image.tag"
@@ -39,5 +39,3 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: 'simple-deployment-{{branch}}-{{number}}'
-      
-      
